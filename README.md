@@ -1,6 +1,6 @@
 # SkywellADBOperations
 Instructions how you can manage ADB operations in your Skywell ET5
-NOTE: English instructions, instruction images and a how to video is coming soon.
+NOTE: For Turkish Instructions (Türkçe Yönergeler İçin): [Skywell ADB İşlemleri](https://github.com/strmotors/SkywellADBOperations/blob/main/README_TR.md)
 
 ```
 ███████╗████████╗   ██████╗ 
@@ -11,80 +11,76 @@ NOTE: English instructions, instruction images and a how to video is coming soon
 ╚══════╝   ╚═╝      ╚═╝  ╚═╝
 ```
 
-## Türkçe: Skywell ET5 Aracımıza Nasıl ADB ile Android Uygulamaları Yükleyebiliriz?
+## How Can We Install Android Apps With ADB On Our Skywell ET5 Vehicle?
 
 Herkese Merhaba,
 
-Skywell ET5 aracımıza uygulama silmek ve yüklemek için ADB (Android Debug Bridge) kullanabiliriz. Aracımızın multimedya sistemi Android işletim sistemi üzerine kuruludur. Her Android cihazın hata ayıklama amaçlarıyla kurulmuş bir ADB arayüzü bulunur. Bu teknikte, ADB sistemini kullanarak aracımıza bağlanabilir, yeni uygulamalar yükleyebilir ve bu uygulamaları silebiliriz.
+We can use ADB (Android Debug Bridge) to delete and install applications on our Skywell ET5 vehicle. The multimedia system of our vehicle is based on the Android operating system. Every Android device has an ADB interface installed for debugging purposes. In this technique, we can connect to our agent using the ADB system, install new applications and delete these applications.
 
-### Gerekenler:
-+ Kişisel erişim noktası açılabilen herhangi bir cihaz. (Ör: Cep telefonunuz)
-+ Bir bilgisayar (Windows)
+### What you need:
++ Any device that can open a personal hotspot. (Ex: Your mobile phone)
++ One computer (Windows)
 
-### İndirmeler:
-+ [Skywell Klasörü](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing)
+### Downloads:
++ [Skywell Folder](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing)
 
-**Önemli Not:** Bu işlemleri adım adım dediğim gibi yaptığınız takdirde, cihazınıza hiçbir zarar gelmeyecek, cihazınız garanti kapsamından çıkmayacaktır. Yapılan tüm işlemler geri alınabilir türdendir. Garanti tarafında sorun yaşamamak adına, aracı yetkili servise götürmeden önce yüklediğiniz uygulamaları silmenizi öneririm. Herhangi bir sorun çıktığı takdirde bana **onureser12@gmail.com** mail adresinden ulaşabilirsiniz.
+**Important Note:** If you do these steps step by step, your device will not be damaged and your device will not be out of warranty. All transactions made are reversible. In order to avoid problems on the warranty side, I suggest you delete the applications you have installed before taking the vehicle to the authorized service. In case of any problems, you can reach me at **onureser12@gmail.com** e-mail address.
 
-#### Adım 1: Gerekli dosyaların kurulumu:
+#### Step 1: Installation of necessary files:
 
-İşlemlere başlamadan önce bu sayfaya bilgisayarınız ile girip, [buraya](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing) tıklayarak gerekli tüm dosyaları indirebilirsiniz. "Skywell" klasörünü rar dosyasından çıkardıktan sonra masaüstüne taşıyınız. Yüklemek istediğiniz .apk dosyalarını bu "Skywell" klasörünün içine atmanız gerekmekte.
+Before starting the process, you can download all the necessary files by entering this page with your computer by clicking [here](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing). After extracting the "Skywell" folder from the rar file, move it to the desktop. You need to put the .apk files you want to install into this "Skywell" folder.
 
-#### Adım 2: Bilgisayarı araba ile aynı Wi-Fi ağına bağlamak:
+#### Step 2: Connecting the computer to the same Wi-Fi network as the car:
 
-Telefonunuzdan bir kişisel erişim noktası oluşturup hem arabanızı hem de bilgisayarınızı aynı Wi-Fi ağına bağlayınız. Sonrasında araç ayarlarında bulunan "Bluetooth Araması" kısmına üst üste, "wifi adb opened" uyarısı çıkana kadar dokunun. Bu noktada Arabanızın IP adresini öğrenmeniz gerekecek. Bunun için araba ayarlarındaki Wi-Fi ayarlarına girin ve bağlı olduğunuz Wi-Fi bağlantısının üzerine tıklayın. Açılan pencerede "192.168.1.34" benzeri bir IP adresi göreceksiniz.
+Create a personal hotspot from your phone and connect both your car and your computer to the same Wi-Fi network. Then tap the "Bluetooth Calling" section in the tool settings repeatedly until the "wifi adb opened" warning appears. At this point you will need to find out the IP address of your Car. For this, enter the Wi-Fi settings in the car settings and click on the Wi-Fi connection you are connected to. In the window that opens, you will see an IP address like "192.168.1.34".
 
-#### Adım 3: ADB ile bilgisayarı arabaya bağlamak:
+#### Step 3: Connecting the computer to the car with ADB:
 
-Bilgisayarınızın klavyesinin ```Windows Tuşu + R``` tuşlarına aynı anda basarak "Çalıştır" penceresini açın. Açılan pencerede "Aç:" yazan metin kutusuna ```cmd``` yazın ve "Tamam" tuşuna basın. Açılan siyah ekranda ```C:\Users\Kullanıcı Adınız>``` yazacak. Buraya yazdığımız her komuttan sonra "Enter" tuşuna basarak komutların çalışmasını sağlayabiliriz. Komutlarımızı yazarken büyük-küçük harflere önem göstermeliyiz.
+Open the "Run" window by simultaneously pressing the "Windows Key + R" keys of your computer's keyboard. In the window that opens, type ```cmd``` in the text box that says "Open:" and press the "OK" button. On the black screen that opens, ```C:\Users\Your Username>``` will be written. We can make the commands work by pressing the "Enter" key after each command we write here. We should pay attention to upper and lower case letters when writing our commands.
 
-Öncelikle masaüstüne attığımız klasörün içine girmek adına aşağıdaki komutu yazalım:
+First of all, let's write the following command to enter the folder we put on the desktop:
 
 ```cd Desktop\Skywell```
 
-Siyah ekranda artık ```C:\Users\Kullanıcı Adınız\Desktop\Skywell>``` yazdığını göreceksiniz. Sonrasında arabaya bağlanmak için arabadan öğrendiğimiz IP adresini kullanarak aşağıdaki komutu yazalım: (Ben 192.168.1.34 örneğinden gittim. Siz ne IP adresi gördüyseniz onu yazın.)
+You will now see ```C:\Users\YourUsername\Desktop\Skywell>``` on the black screen. Then, to connect to the car, let's write the following command using the IP address we learned from the car: (I went from the example of 192.168.1.34. Write whatever IP address you saw.)
 
 ```adb connect 192.168.1.34```
 
-Bağlantı kurulduktan sonra aşağıdaki komutu yazarak istediğimiz apk dosyasını kurabiliriz: (Örnekteki info.apk dosyası, indireceğiniz Skywell klasörünün içinde örnek olarak koyulmuştur. Deneme amaçlı bu uygulamayı yükleyebilirsiniz. info.apk uygulaması sayesinde aracın özelliklerini ve yüklü donanımı görebiliriz.)
+After the connection is established, we can install the apk file we want by typing the following command: (The info.apk file in the example is placed as an example in the Skywell folder you will download. You can install this application for trial purposes. Thanks to the info.apk application, we can see the features of the vehicle and the installed hardware.)
 
 ```adb install ./info.apk```
 
-#### Adım 4: Yüklemeyi doğrulamak:
+#### Step 4: Verify the installation:
 
-Bazen yükleme gereğinden uzun sürebilir, takılabilir veya bağlantı kopabilir. Bu durumlar hiçbir kötü sonuç doğurmaz, sadece işlemi tekrar yapmanız gerekir. Yükleme işlemi bittikten sonra aracımızdan uygulama merkezine girelim. Eğer yüklemiş olduğumuz uygulamayı göremiyorsak, sol üstteki çarpı işaretine tıklayarak uygulama merkezini kapatıp tekrar açalım.
+Sometimes the download may take longer than necessary, hang or disconnect. These situations do not cause any bad consequences, you just have to repeat the process. After the installation process is finished, let's enter the application center from our vehicle. If we cannot see the application we have installed, let's close the application center and open it again by clicking the cross in the upper left.
 
-## Türkçe: ADB Kullanarak Yüklediğimiz Uygulamaları Nasıl Silebiliriz?
+## How Can We Delete Apps We Installed Using ADB?
 
-Aynı yükleme işlemindeki gibi, silme işleminde de "Skywell" klasörü masaüstünde, araba ile bilgisayar aynı Wi-Fi ağına bağlı olmalıdır. Bu koşullar sağlanıyorsa, cmd ekranını tekrar açabiliriz.
+Just like in the installation process, the "Skywell" folder must be on the desktop, and the car and the computer must be connected to the same Wi-Fi network in the deletion process. If these conditions are met, we can open the cmd screen again.
 
-#### Adım 1: ADB ile bilgisayarı arabaya bağlamak:
+#### Step 1: Connecting the computer to the car with ADB:
 
-Bilgisayarınızın klavyesinin ```Windows Tuşu + R``` tuşlarına aynı anda basarak "Çalıştır" penceresini açın. Açılan pencerede "Aç:" yazan metin kutusuna ```cmd``` yazın ve "Tamam" tuşuna basın. Açılan siyah ekranda ```C:\Users\Kullanıcı Adınız>``` yazacak. Buraya yazdığımız her komuttan sonra "Enter" tuşuna basarak komutların çalışmasını sağlayabiliriz. Komutlarımızı yazarken büyük-küçük harflere önem göstermeliyiz.
+Open the "Run" window by simultaneously pressing the "Windows Key + R" keys of your computer's keyboard. In the window that opens, type ```cmd``` in the text box that says "Open:" and press the "OK" button. On the black screen that opens, ```C:\Users\Your Username>``` will be written. We can make the commands work by pressing the "Enter" key after each command we write here. We should pay attention to upper and lower case letters when writing our commands.
 
-Öncelikle masaüstüne attığımız klasörün içine girmek adına aşağıdaki komutu yazalım:
+First of all, let's write the following command to enter the folder we put on the desktop:
 
 ```cd Desktop\Skywell```
 
-Önceden kalma herhangi bir bağlantı olmasını önlemek adına, ADB'nin bağlantığı tüm cihazlardan bağlantıyı koparalım:
+Let's disconnect from all devices that ADB connects to, to avoid any pre-existing connections:
 
 ```adb disconnect```
 
-Aracın IP adresini kullanarak araç ile bağlantı kuralım:
+Let's connect to the vehicle using the vehicle's IP address:
 
 ```adb connect 192.168.1.34```
 
 #### Adım 2: ADB kullanarak tabletin "Ayarlar" gizli menüsünü açma:
 
-ADB bağlantısı kurulduktan sonra aşağıdaki komutu girerek "Ayarlar" gizli menüsünü açabiliriz. Bu menüde yaptığınız her şey kendi sorumluluğunuzdadır.
+After the ADB connection is established, we can open the "Settings" hidden menu by entering the following command. Everything you do in this menu is at your own risk.
 
 ```adb shell am start -a android.settings.SETTINGS```
 
-Açılan ayarlar menüsünden uygulama ayarlarına giderek istediğiniz uygulamayı silebilirsiniz.
-
-Not: Yakında resimli ve videolu anlatım eklenecek.
-
-İyi Çalışmalar,
+You can delete the application you want by going to the application settings from the settings menu that opens.
 
 Onur Eser
 
