@@ -1,5 +1,5 @@
 # SkywellADBOperations
-Instructions how you can manage ADB operations in your Skywell ET5
+Instructions how you can manage ADB operations in your Skywell ET5</br>
 NOTE: For Turkish Instructions (Türkçe Yönergeler İçin): [Skywell ADB İşlemleri](https://github.com/strmotors/SkywellADBOperations/blob/main/README_TR.md)
 
 ```
@@ -74,7 +74,7 @@ Let's connect to the vehicle using the vehicle's IP address:
 
 ```adb connect 192.168.1.34```
 
-#### Adım 2: ADB kullanarak tabletin "Ayarlar" gizli menüsünü açma:
+#### Step 2: Opening the tablet's "Settings" hidden menu using ADB:
 
 After the ADB connection is established, we can open the "Settings" hidden menu by entering the following command. Everything you do in this menu is at your own risk.
 
