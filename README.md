@@ -1,7 +1,4 @@
-# SkywellADBOperations
-Instructions how you can manage ADB operations in your Skywell ET5</br>
-NOTE: For Turkish Instructions (Türkçe Yönergeler İçin): [Skywell ADB İşlemleri](https://github.com/strmotors/SkywellADBOperations/blob/main/README_TR.md)
-
+# Skywell ADB Operations Guide
 ```
 ███████╗████████╗   ██████╗ 
 ██╔════╝╚══██╔══╝   ██╔══██╗
@@ -10,78 +7,84 @@ NOTE: For Turkish Instructions (Türkçe Yönergeler İçin): [Skywell ADB İşl
 ███████║   ██║      ██║  ██║
 ╚══════╝   ╚═╝      ╚═╝  ╚═╝
 ```
+Welcome to the Skywell ADB Operations Guide! This guide provides step-by-step instructions on how to manage ADB (Android Debug Bridge) operations on your Skywell ET5 vehicle.
 
-## How Can We Install Android Apps With ADB On Our Skywell ET5 Vehicle?
+**Note:** (Türkçe) Turkish instructions are available [here](https://github.com/strmotors/SkywellADBOperations/blob/main/README_TR.md).
 
-Herkese Merhaba,
+## Introduction
 
-We can use ADB (Android Debug Bridge) to delete and install applications on our Skywell ET5 vehicle. The multimedia system of our vehicle is based on the Android operating system. Every Android device has an ADB interface installed for debugging purposes. In this technique, we can connect to our agent using the ADB system, install new applications and delete these applications.
+With ADB, you can efficiently manage application installations and removals on your Skywell ET5 vehicle. The multimedia system in your vehicle is powered by the Android operating system, and every Android device features an ADB interface for debugging purposes. By leveraging this technology, you can connect to your vehicle's system, install new apps, and uninstall existing ones.
 
-### What you need:
-+ Any device that can open a personal hotspot. (Ex: Your mobile phone)
-+ One computer (Windows)
+### Prerequisites
 
-### Downloads:
-+ [Skywell Folder](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing)
+To get started, ensure you have the following:
 
-**Important Note:** If you do these steps step by step, your device will not be damaged and your device will not be out of warranty. All transactions made are reversible. In order to avoid problems on the warranty side, I suggest you delete the applications you have installed before taking the vehicle to the authorized service. In case of any problems, you can reach me at **onureser12@gmail.com** e-mail address.
+- A device capable of creating a personal hotspot (e.g., your smartphone).
+- A computer running Windows.
 
-#### Step 1: Installation of necessary files:
+### Downloads
 
-Before starting the process, you can download all the necessary files by entering this page with your computer by clicking [here](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing). After extracting the "Skywell" folder from the rar file, move it to the desktop. You need to put the .apk files you want to install into this "Skywell" folder.
+Download the essential files:
 
-#### Step 2: Connecting the computer to the same Wi-Fi network as the car:
+- [Skywell Folder](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing)
 
-Create a personal hotspot from your phone and connect both your car and your computer to the same Wi-Fi network. Then tap the "Bluetooth Calling" section in the tool settings repeatedly until the "wifi adb opened" warning appears. At this point you will need to find out the IP address of your Car. For this, enter the Wi-Fi settings in the car settings and click on the Wi-Fi connection you are connected to. In the window that opens, you will see an IP address like "192.168.1.34".
+**Important Note:** Following these steps will not damage your device or void its warranty. All actions taken are reversible. To avoid warranty issues, it's recommended to uninstall any apps you've added before taking your vehicle for authorized service. For assistance, reach out to us at **strmotorstr@gmail.com**.
 
-#### Step 3: Connecting the computer to the car with ADB:
+## Installation Steps
 
-Open the "Run" window by simultaneously pressing the "Windows Key + R" keys of your computer's keyboard. In the window that opens, type ```cmd``` in the text box that says "Open:" and press the "OK" button. On the black screen that opens, ```C:\Users\Your Username>``` will be written. We can make the commands work by pressing the "Enter" key after each command we write here. We should pay attention to upper and lower case letters when writing our commands.
+### Step 1: Prepare Necessary Files
 
-First of all, let's write the following command to enter the folder we put on the desktop:
+1. Download the required files from [here](https://drive.google.com/file/d/1_5Ux8xSb4I_E_NUmiDYTvRxZo4r_Vkwi/view?usp=sharing) and extract the "Skywell" folder from the downloaded archive.
+2. Move the extracted "Skywell" folder to your desktop.
+3. Place the .apk files you wish to install into the "Skywell" folder.
 
-```cd Desktop\Skywell```
+### Step 2: Connect to Car's Wi-Fi Network
 
-You will now see ```C:\Users\YourUsername\Desktop\Skywell>``` on the black screen. Then, to connect to the car, let's write the following command using the IP address we learned from the car: (I went from the example of 192.168.1.34. Write whatever IP address you saw.)
+1. Create a personal hotspot on your phone and connect both your car and computer to this hotspot.
+2. In the car's settings, navigate to the "Bluetooth Calling" section and tap it repeatedly until the "wifi adb opened" message appears.
+3. Find the car's IP address by accessing Wi-Fi settings in the car settings menu. Touch to the wifi you have connected and the car's IP address will appear.
 
-```adb connect 192.168.1.34```
+### Step 3: Establish ADB Connection
 
-After the connection is established, we can install the apk file we want by typing the following command: (The info.apk file in the example is placed as an example in the Skywell folder you will download. You can install this application for trial purposes. Thanks to the info.apk application, we can see the features of the vehicle and the installed hardware.)
+1. Press `Windows Key + R` to open the "Run" window, then type `cmd` and press "OK".
+2. In the Command Prompt, enter the following commands:
 
-```adb install ./info.apk```
+```
+cd Desktop\Skywell
+adb connect <Car's IP Address>
+adb install ./<APK File Name>.apk
+```
+Replace `<Car's IP Address>` with the actual IP address obtained from the car's settings.
 
-#### Step 4: Verify the installation:
+### Step 4: Verify Installation
 
-Sometimes the download may take longer than necessary, hang or disconnect. These situations do not cause any bad consequences, you just have to repeat the process. After the installation process is finished, let's enter the application center from our vehicle. If we cannot see the application we have installed, let's close the application center and open it again by clicking the cross in the upper left.
+1. After the installation process, open the application center on your vehicle.
+2. If you can't see the newly installed app, close and reopen the application center from the cross icon on the top left.
 
-## How Can We Delete Apps We Installed Using ADB?
+## Uninstallation Steps
 
-Just like in the installation process, the "Skywell" folder must be on the desktop, and the car and the computer must be connected to the same Wi-Fi network in the deletion process. If these conditions are met, we can open the cmd screen again.
+### Step 1: Prepare for Uninstallation
 
-#### Step 1: Connecting the computer to the car with ADB:
+1. Ensure the "Skywell" folder is still on your desktop.
+2. Make sure both the car and the computer are connected to the same Wi-Fi network.
 
-Open the "Run" window by simultaneously pressing the "Windows Key + R" keys of your computer's keyboard. In the window that opens, type ```cmd``` in the text box that says "Open:" and press the "OK" button. On the black screen that opens, ```C:\Users\Your Username>``` will be written. We can make the commands work by pressing the "Enter" key after each command we write here. We should pay attention to upper and lower case letters when writing our commands.
+### Step 2: Connect and Access ADB
 
-First of all, let's write the following command to enter the folder we put on the desktop:
+1. Open the "Run" window again by pressing `Windows Key + R` and entering `cmd`.
+2. In the Command Prompt, enter the following commands:
 
-```cd Desktop\Skywell```
+```
+cd Desktop\Skywell
+adb disconnect
+adb connect <Car's IP Address>
+adb shell am start -a android.settings.SETTINGS
+```
+Replace `<Car's IP Address>` with the car's IP address.
 
-Let's disconnect from all devices that ADB connects to, to avoid any pre-existing connections:
+3. This will open the hidden "Settings" menu on the tablet. You can uninstall any app you want from this menu, just like any Android device.
 
-```adb disconnect```
+## About the Author
 
-Let's connect to the vehicle using the vehicle's IP address:
+This guide is authored by *ST-R Motors*. We hope this guide simplifies your ADB operations on your Skywell ET5 vehicle. Feel free to reach out to us at **strmotorstr@gmail.com** for any assistance.
 
-```adb connect 192.168.1.34```
-
-#### Step 2: Opening the tablet's "Settings" hidden menu using ADB:
-
-After the ADB connection is established, we can open the "Settings" hidden menu by entering the following command. Everything you do in this menu is at your own risk.
-
-```adb shell am start -a android.settings.SETTINGS```
-
-You can delete the application you want by going to the application settings from the settings menu that opens.
-
-Onur Eser
-
-*ST-R Motors*
+Happy driving with your Skywell ET5!
